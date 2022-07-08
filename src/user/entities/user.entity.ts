@@ -9,11 +9,13 @@ export class UserEntity {
   @Column()
   fullName: string;
 
-  @Column()
+  @Column({
+    unique: true,
+  })
   email: string;
 
-  @Column()
-  password: string;
+  @Column({ nullable: true })
+  password?: string;
 
   @Column({ default: true })
   isActive: boolean;
